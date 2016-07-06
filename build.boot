@@ -36,7 +36,7 @@
   "Build project for deployment to clojars."
   []
   (comp
-    ;(version :minor 'inc :patch 'zero)
+    (version :minor 'inc :patch 'zero)
     (build-jar)
     (push-release)))
 
