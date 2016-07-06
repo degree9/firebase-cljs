@@ -40,3 +40,20 @@
 
   (resolve [prom value] (.resolve prom value)))
 
+(extend-type object
+
+  FirebaseThenable
+  (catch [prom callback] (.catch prom callback))
+
+  (then
+    ([prom callback]
+     (.then prom  callback))
+    ([prom callback failure]
+     (.then prom callback failure)))
+
+  FirebasePromise
+  (all [prom values] (.all prom values))
+
+  (reject [prom failure] (.reject prom failure))
+
+  (resolve [prom value] (.resolve prom value)))

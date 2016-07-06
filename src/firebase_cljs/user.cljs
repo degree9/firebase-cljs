@@ -14,7 +14,7 @@
 
   (remove [_] "Deletes and signs out the user.")
 
-  (get-token [_ refresh] "Returns a JWT token used to identify the user to a Firebase service.")
+  (get-token [_] [_ refresh] "Returns a JWT token used to identify the user to a Firebase service.")
 
   (link [_ cred] "Links the user account with the given credentials.")
 
@@ -72,7 +72,9 @@
 
   (remove [user] (.. user delete))
 
-  (get-token [user refresh] (.. user (getToken refresh)))
+  (get-token
+    ([user] (.. user getToken))
+    ([user refresh] (.. user (getToken refresh))))
 
   (link [user cred] (.. user (link cred)))
 
