@@ -24,4 +24,4 @@ deployment:
     branch: master
     commands:
       - ~/bin/boot deploy
-      - git add -a && git push origin master
+      - git add -A && git push origin master
