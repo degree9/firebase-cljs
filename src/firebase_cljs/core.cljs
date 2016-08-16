@@ -37,7 +37,7 @@
 
 ;; Firebase Properties
 (defn get-apps []
-  (->cljs (.. fb -apps)))
+  (->cljs (aget fb "apps")))
 
 (defn get-version []
-  (->cljs (.. fb -SDK_VERSION)))
+  (->cljs (aget fb "SDK_VERSION")))

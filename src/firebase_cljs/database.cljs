@@ -161,7 +161,7 @@
     ([db event callback]
      (disable-listener! (get-ref db) event callback)))
 
-  firebase.database.Reference
+  object
   (get-in [ref korks] (fbref/get-child ref (korks->path korks)))
 
   (reset!
