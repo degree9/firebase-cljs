@@ -14,16 +14,22 @@
  '[tolitius.boot-check :as check])
 
 (task-options!
- pom    {:project 'degree9/firebase-cljs
-         :description "Firebase bindings for CLJS"
-         :url         ""
-         :version (get-version)
-         :scm {:url ""}}
- apidoc {:version (get-version)
-         :reader :clojurescript
-         :title "firebase-cljs"
-         :sources #{"src"}
-         :description "Cljs bindings for Firebase API v3."})
+  push   {:gpg-sign false}
+  pom    {:project 'degree9/firebase-cljs
+          :description "Firebase bindings for CLJS"
+          :url         ""
+          :version (get-version)
+          :scm {:url ""}}
+  apidoc {:version (get-version)
+          :reader :clojurescript
+          :title "firebase-cljs"
+          :sources #{"src"}
+          :description "Cljs bindings for Firebase API v3."})
+
+(deftask ci-deps
+  "Fetch dependencies for CI deployments."
+  []
+  identity)
 
 (deftask ci-deps
   "Fetch dependencies for CI deployments."
