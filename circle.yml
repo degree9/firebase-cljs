@@ -24,4 +24,3 @@ deployment:
     branch: master
     commands:
       - ~/bin/boot deploy
-      - git subtree push --prefix docs/api origin gh-pages
