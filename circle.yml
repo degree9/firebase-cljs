@@ -18,11 +18,3 @@ dependencies:
 test:
   override:
     - ~/bin/boot tests
-
-deployment:
-  clojars:
-    branch: master
-    commands:
-      - ~/bin/boot deploy
-      - git config user.email "matt@degree9.io" && git config user.name "CircleCI Bot"
-      - git add -A && git commit -m 'version deployed' && git push origin master
