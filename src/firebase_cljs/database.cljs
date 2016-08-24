@@ -212,7 +212,7 @@
     ([ref type callback]
      (fbquery/once ref type callback))
     ([ref korks type callback]
-     (fbquery/once ref korks type callback)))
+     (fbquery/once (get-in ref korks) type callback)))
 
   (disable-listener!
     ([ref event]

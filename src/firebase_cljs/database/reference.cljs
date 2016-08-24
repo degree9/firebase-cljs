@@ -90,6 +90,8 @@
      (.. query (on event callback failure))))
 
   (once
+    ([query event]
+     (.. query (once event)))
     ([query event callback]
      (.. query (once event callback)))
     ([query event callback failure]
