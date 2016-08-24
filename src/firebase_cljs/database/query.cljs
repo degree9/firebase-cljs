@@ -28,19 +28,19 @@
     [_]
     [_ event]
     [_ event callback]
-    [_ event callback context]
+    [_ event callback failure]
     "Detaches a callback previously attached with on.")
 
   (on
     [_ event]
     [_ event callback]
-    [_ event callback context]
-    [_ event callback failure context]
+    [_ event callback failure]
     "Listens for data changes at a particular location.")
 
   (once
     [_ event]
     [_ event callback]
+    [_ event callback failure]
     "Listens for exactly one event of the specified event type, and then stops listening.")
 
   (sort-by
@@ -85,22 +85,22 @@
      (.. query (off event)))
     ([query event callback]
      (.. query (off event callback)))
-    ([query event callback context]
-     (.. query (off event callback context))))
+    ([query event callback failure]
+     (.. query (off event callback failure))))
 
   (on
     ([query event callback]
      (.. query (on event callback)))
-    ([query event callback context]
-     (.. query (on event callback context)))
-    ([query event callback failure context]
-     (.. query (on event callback failure context))))
+    ([query event callback failure]
+     (.. query (on event callback failure))))
 
   (once
     ([query event]
-     (.. query (once event)))
+      (.. query (once event)))
     ([query event callback]
-     (.. query (once event callback))))
+     (.. query (once event callback)))
+    ([query event callback failure]
+     (.. query (once event callback failure))))
 
   (sort-by
     ([query sort]

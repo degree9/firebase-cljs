@@ -80,22 +80,20 @@
      (.. query (off event)))
     ([query event callback]
      (.. query (off event callback)))
-    ([query event callback context]
-     (.. query (off event callback context))))
+    ([query event callback failure]
+     (.. query (off event callback failure))))
 
   (on
     ([query event callback]
      (.. query (on event callback)))
-    ([query event callback context]
-     (.. query (on event callback context)))
-    ([query event callback failure context]
-     (.. query (on event callback failure context))))
+    ([query event callback failure]
+     (.. query (on event callback failure))))
 
   (once
-    ([query event]
-     (.. query (once event)))
     ([query event callback]
-     (.. query (once event callback))))
+     (.. query (once event callback)))
+    ([query event callback failure]
+     (.. query (once event callback failure))))
 
   (sort-by
     ([query sort]
@@ -155,5 +153,3 @@
   (update!
     ([ref obj] (.. ref (update obj)))
     ([ref obj callback] (.. ref (update obj callback)))))
-
-

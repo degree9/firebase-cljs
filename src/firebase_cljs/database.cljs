@@ -151,9 +151,9 @@
 
   (listen-once
     ([db type callback]
-     (listen-once (get-ref db) type callback))
+     (-> db get-ref (listen-once type callback)))
     ([db korks type callback]
-     (listen-once (get-ref db) korks type callback)))
+     (-> db get-ref (get-in korks) (listen-once type callback))))
 
   (disable-listener!
     ([db event]
@@ -210,9 +210,9 @@
 
   (listen-once
     ([ref type callback]
-     (fbquery/once ref type))
+     (fbquery/once ref type callback))
     ([ref korks type callback]
-     (fbquery/once (get-in ref korks) type callback)))
+     (fbquery/once ref korks type callback)))
 
   (disable-listener!
     ([ref event]
