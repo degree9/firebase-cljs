@@ -4,5 +4,5 @@
  [degree9/boot-semver       "1.2.1" :scope "test"]
  [tolitius/boot-check       "0.1.1" :scope "test"]
  [funcool/boot-codeina      "0.1.0-SNAPSHOT" :scope "test"]
- [cljsjs/firebase           "3.0.5-rc2-0"]
+ [cljsjs/firebase           "3.2.1-0"]
 ]
