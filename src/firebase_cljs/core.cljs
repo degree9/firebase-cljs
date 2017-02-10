@@ -37,7 +37,7 @@
 
 ;; Firebase Properties
 (defn get-apps []
-  (->cljs (aget fb "apps")))
+  (->cljs (goog.object/get fb "apps")))
 
 (defn get-version []
-  (->cljs (aget fb "SDK_VERSION")))
+  (->cljs (goog.object/get fb "SDK_VERSION")))
